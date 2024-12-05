@@ -1,5 +1,6 @@
 package java_labs4.Controller;
 
+import java_labs4.Model.Constants.*;
 import java_labs4.Model.ExceptionCar;
 import java_labs4.View.CarView;
 
@@ -10,14 +11,14 @@ public class CarController {
     public final CarView view = new CarView();
 
     public void handleRequest() {
-        String carName = view.getValue("Enter car's name: ");
-        ExceptionCar.Car car = ExceptionCar.Car.getCar(carName);
+        String carName = view.getString("Enter car's name: ");
+        Car car = Car.getCar(carName);
 
-        String colorInput = view.getValue("Enter car's color: ");
-        ExceptionCar.Color color = ExceptionCar.Color.getColor(colorInput);
+        String colorInput = view.getString("Enter car's color: ");
+        Color color = Color.getColor(colorInput);
 
-        String dayInput = view.getValue("Enter car's day: ");
-        ExceptionCar.Day day = ExceptionCar.Day.getDay(dayInput);
+        String dayInput = view.getString("Enter car's day: ");
+        Day day = Day.getDay(dayInput);
 
          int price = view.getValueInt("Enter car's price: ");
 
@@ -30,12 +31,12 @@ public class CarController {
 
     }
 
-    public void validDateCar(ExceptionCar.Car car, ExceptionCar.Color color, ExceptionCar.Day day, int price) throws ExceptionCar {
+    public void validDateCar(Car car, Color color, Day day, int price) throws ExceptionCar {
         if (car == null) {
             throw new ExceptionCar("invalid car");
         }
-        List<String> colors = car.getColor();
-        List<String> days = car.getDaySell();
+        List<Color> colors = car.getColor();
+        List<Day> days = car.getDaySell();
         List<Integer> prices = car.getCarPrice();
 
         if (!colors.contains(color) && !colors.equals("NO_COLOR")) {
@@ -47,10 +48,5 @@ public class CarController {
         if (!prices.contains(price)) {
             throw new ExceptionCar("Invalid price");
         }
-    }
-
-    public static void main(String[] args) {
-        CarController cc = new CarController();
-        cc.handleRequest();
     }
 }
