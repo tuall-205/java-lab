@@ -1,11 +1,16 @@
 package J1.S.P0011;
 
 
+import J1.S.P0011.Controller.Manager;
+import J1.S.P0011.View.Validate;
+import J1.S.P0011.View.view;
+
 public class Main {
 
     public static void main(String[] args) {
         while (true) {
-            int choice = Manager.displayMenu();
+            view.displayMenu();
+            int choice = Validate.getChoice();
             switch (choice) {
                 case 1:
                     String binary = Validate.checkInputBinary();

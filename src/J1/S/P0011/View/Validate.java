@@ -1,6 +1,5 @@
-package J1.S.P0011;
+package J1.S.P0011.View;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Validate {
@@ -28,6 +27,7 @@ public class Validate {
     public static String checkInputBinary() {
         while (true) {
             System.out.print("Please enter binary number: ");
+            sc.nextLine();
             String binary = sc.nextLine().trim();
             if (binary.matches(BINARY_VALID)) {
                 return binary;
@@ -40,6 +40,7 @@ public class Validate {
     public static String checkInputDecimal() {
         while (true) {
             System.out.print("Please enter decimal number: ");
+            sc.nextLine();
             String decimal = sc.nextLine().trim();
             if (decimal.matches(DECIMAL_VALID)) {
                 return decimal;
@@ -52,6 +53,7 @@ public class Validate {
     public static String checkInputHexaDecimal() {
         while (true) {
             System.out.print("Please enter hexadecimal number: ");
+            sc.nextLine();
             String hexa = sc.nextLine().trim();
             if (hexa.matches(HEXADECIMAL_VALID)) {
                 return hexa;
@@ -59,5 +61,9 @@ public class Validate {
             System.out.println("Number must be hexadecimal number {0-9A-F}");
             System.out.println("Please try again");
         }
+    }
+
+    public static int getChoice() {
+        return sc.nextInt();
     }
 }
