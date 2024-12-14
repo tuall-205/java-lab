@@ -6,22 +6,24 @@ import J1.S.P0011.View.Validate;
 import J1.S.P0011.View.view;
 
 public class Main {
-
     public static void main(String[] args) {
+        view view1 = new view();
+        Validate validate = new Validate();
+        Manager Manager = new Manager(view1, validate);
         while (true) {
-            view.displayMenu();
+            view1.displayMenu();
             int choice = Validate.getChoice();
             switch (choice) {
                 case 1:
-                    String binary = Validate.checkInputBinary();
+                    String binary = validate.checkInputBinary();
                     Manager.convertFromBinary(binary);
                     break;
                 case 2:
-                    String decimal = Validate.checkInputDecimal();
+                    String decimal = validate.checkInputDecimal();
                     Manager.convertFromDecimal(decimal);
                     break;
                 case 3:
-                    String hexa = Validate.checkInputHexaDecimal();
+                    String hexa = validate.checkInputHexaDecimal();
                     Manager.convertFromHexa(hexa);
                     break;
                 case 4:

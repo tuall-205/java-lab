@@ -1,7 +1,7 @@
 package J1.S.P0011.View;
 
 public class view {
-    public static void displayMenu() {
+    public void displayMenu() {
         System.out.println("1. Convert from Binary");
         System.out.println("2. Convert from Decimal");
         System.out.println("3. Convert from Hexa");
@@ -9,7 +9,7 @@ public class view {
         System.out.print("Enter your choice: ");
     }
 
-    public static void displayConvertMenu(String from, String toCase1, String toCase2) {
+    public void displayConvertMenu(String from, String toCase1, String toCase2) {
         System.out.println("1. Convert " + from + " to " + toCase1);
         System.out.println("2. Convert " + from + " to " + toCase2);
         System.out.print("Enter your choice: ");

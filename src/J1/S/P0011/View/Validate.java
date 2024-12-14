@@ -6,10 +6,10 @@ public class Validate {
 
     private static final Scanner sc = new Scanner(System.in);
     private static final String BINARY_VALID = "[0-1]*";
-    private static final String HEXADECIMAL_VALID = "[0-9A-F]*";
+    private static final String HEXADECIMAL_VALID = "[0-9a-fA-F]*";
     private static final String DECIMAL_VALID = "[0-9]*";
 
-    public static int checkInputIntLimit (int min, int max) {
+    public int checkInputIntLimit (int min, int max) {
        while (true) {
            try {
                int result = Integer.parseInt(sc.nextLine().trim());
@@ -24,7 +24,7 @@ public class Validate {
        }
     }
 
-    public static String checkInputBinary() {
+    public String checkInputBinary() {
         while (true) {
             System.out.print("Please enter binary number: ");
             sc.nextLine();
@@ -37,7 +37,7 @@ public class Validate {
         }
     }
 
-    public static String checkInputDecimal() {
+    public String checkInputDecimal() {
         while (true) {
             System.out.print("Please enter decimal number: ");
             sc.nextLine();
@@ -50,11 +50,11 @@ public class Validate {
         }
     }
 
-    public static String checkInputHexaDecimal() {
+    public String checkInputHexaDecimal() {
         while (true) {
             System.out.print("Please enter hexadecimal number: ");
             sc.nextLine();
-            String hexa = sc.nextLine().trim();
+            String hexa = sc.nextLine().trim().toUpperCase();
             if (hexa.matches(HEXADECIMAL_VALID)) {
                 return hexa;
             }
