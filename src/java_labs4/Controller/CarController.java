@@ -8,7 +8,11 @@ import java.util.List;
 
 public class CarController {
 
-    public final CarView view = new CarView();
+    private final CarView view;
+
+    public CarController(CarView view) {
+        this.view = view;
+    }
 
     public void handleRequest() {
         String carName = view.getString("Enter car's name: ");
@@ -28,7 +32,6 @@ public class CarController {
          }catch (ExceptionCar e) {
              view.displayMess("Error: " + e.getMessage());
          }
-
     }
 
     public void validDateCar(Car car, Color color, Day day, int price) throws ExceptionCar {
